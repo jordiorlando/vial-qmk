@@ -21,16 +21,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID    0x5049
-#define PRODUCT_ID   0x0001
+#define PRODUCT_ID   0x0002
 #define DEVICE_VER   0x0001
 #define MANUFACTURER Jack_Kester
 #define PRODUCT      Pikatea Macropad
 
-#define VIAL_KEYBOARD_UID {0xE8, 0xF5, 0xE6, 0xF0, 0x82, 0xC0, 0x88, 0xF8}
+#define VIAL_KEYBOARD_UID {0xF2, 0x82, 0x4F, 0x07, 0x86, 0xC5, 0x30, 0x45}
 
 /* key matrix size */
 #define MATRIX_ROWS 1
-#define MATRIX_COLS 6
+#define MATRIX_COLS 8
 
 /*
  * Keyboard Matrix Assignments
@@ -42,7 +42,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *                  ROW2COL = ROW = Anode (+), COL = Cathode (-, marked on diode)
  *
  */
-#define MATRIX_COL_PINS { E6, C6, B5, B4, D7, D1 }
+#define MATRIX_COL_PINS { F1, F0, D7, B4, E6, B5, C6, D1}
 #define MATRIX_ROW_PINS { F7 }
 #define UNUSED_PINS
 
