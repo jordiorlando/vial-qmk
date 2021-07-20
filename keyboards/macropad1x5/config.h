@@ -48,11 +48,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define BACKLIGHT_BREATHING
 #define BREATHING_PERIOD 6
 
-// RGB underglow
-#define RGB_DI_PIN F6
-#define RGBLED_NUM 6
-#define RGBLIGHT_ANIMATIONS
-
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
 #define DEBOUNCE 5
 
