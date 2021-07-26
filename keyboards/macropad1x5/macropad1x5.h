@@ -17,13 +17,6 @@
 
 #include "quantum.h"
 
-// Select revision
-#if defined(KEYBOARD_macropad1x5_rev01)
-    #include "rev01.h"
-#elif defined(KEYBOARD_macropad1x5_rev03)
-    #include "rev03.h"
-#endif
-
 /* This a shortcut to help you visually see your layout.
  *
  * The first section contains all of the arguments representing the physical

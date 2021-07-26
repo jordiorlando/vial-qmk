@@ -2,7 +2,7 @@
     "name": "Macropad1x5",
     "vendorId": "0x0801",
     "productId": "0x1133",
-    "lighting": "none",
+    "lighting": "qmk_backlight",
     "matrix": {
         "rows": 1,
         "cols": 5
