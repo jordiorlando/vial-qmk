@@ -27,6 +27,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT      Pikatea Macropad
 
 #define VIAL_KEYBOARD_UID {0xE8, 0xF5, 0xE6, 0xF0, 0x82, 0xC0, 0x88, 0xF8}
+#define VIAL_ENCODER_DEFAULT { KC_VOLD, KC_VOLU, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS }
+#define VIAL_UNLOCK_COMBO_ROWS { 0, 0 }
+#define VIAL_UNLOCK_COMBO_COLS { 1, 5 }
 
 /* key matrix size */
 #define MATRIX_ROWS 1
