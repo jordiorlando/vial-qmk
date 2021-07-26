@@ -1,4 +1,4 @@
-/* Copyright 2021 Leon Stubbig <leonskeyboards@gmail.com>
+/* Copyright 2020 Leon Stubbig <leonstubbig@web.de>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,6 +16,13 @@
 #pragma once
 
 #include "quantum.h"
+
+// Select revision
+#if defined(KEYBOARD_macropad1x5_rev01)
+    #include "rev01.h"
+#elif defined(KEYBOARD_macropad1x5_rev03)
+    #include "rev03.h"
+#endif
 
 /* This a shortcut to help you visually see your layout.
  *

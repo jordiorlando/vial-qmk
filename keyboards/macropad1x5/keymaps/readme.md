@@ -1,0 +1,3 @@
+# Keymaps
+
+Default keymaps for builds with and without a push button in the encoder (default and default1x4, respectively). The via keymaps work with [Via](https://caniusevia.com/) and [Vial](https://get.vial.today/). For use with Via the via.json needs to be loaded manually as a draft definition in the Design tab, while Vial reads the layout from the MCU. At this point the encoder is not supported in Via, the use of Vial is therefore recommended.

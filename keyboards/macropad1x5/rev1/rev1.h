@@ -13,30 +13,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include QMK_KEYBOARD_H
+#pragma once
 
-// Defines names for use in layer keycodes and the keymap
-enum layer_names {
-    _Media,
-    _BL,
-};
+#include "quantum.h"
 
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_Media] = LAYOUT(
-        KC_MUTE, KC_1, KC_2, KC_3, KC_4
-    ),
-    [_BL] = LAYOUT(
-        _______, _______, _______, _______, _______
-    ),
-};
-
-bool encoder_update_user(uint8_t index, bool clockwise) {
-    if (index == 0) { /* First encoder */
-        if (clockwise) {
-            tap_code(KC_AUDIO_VOL_UP);
-        } else {
-            tap_code(KC_AUDIO_VOL_DOWN);
-        }
-    }
-    return true;
-}

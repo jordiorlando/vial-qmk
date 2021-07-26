@@ -12,6 +12,7 @@ void eeconfig_init_kb(void) {
     rgblight_mode(RGBLIGHT_MODE_RAINBOW_SWIRL + 2); // set to RGB_RAINBOW_SWIRL by default
 #endif
 #endif
+
     eeconfig_update_kb(0);
     eeconfig_init_user();
 }
