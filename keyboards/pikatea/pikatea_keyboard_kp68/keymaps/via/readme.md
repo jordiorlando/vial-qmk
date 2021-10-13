@@ -1,1 +1,1 @@
-# The via keymap for pikatea
+# The default keymap for pikatea

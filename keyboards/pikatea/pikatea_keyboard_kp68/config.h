@@ -24,9 +24,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT_ID   0x0003
 #define DEVICE_VER   0x0001
 #define MANUFACTURER Jack_Kester
-#define PRODUCT      Pikatea Keyboard 68
+#define PRODUCT      Pikatea Keyboard KP68
 
-// #define VIAL_KEYBOARD_UID {0xF2, 0x82, 0x4F, 0x07, 0x86, 0xC5, 0x30, 0x45}
+#define VIAL_KEYBOARD_UID {0x44, 0x1D, 0x39, 0x46, 0x42, 0x84, 0xDF, 0x02}
+#define VIAL_ENCODER_DEFAULT { KC_VOLD, KC_VOLU, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS }
 
 /* key matrix size */
 #define MATRIX_ROWS 10
