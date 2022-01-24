@@ -21,17 +21,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID    0x5049
-#define PRODUCT_ID   0x0004
+#define PRODUCT_ID   0x0003
 #define DEVICE_VER   0x0001
 #define MANUFACTURER Jack_Kester
-#define PRODUCT      Pikatea Macropad
+#define PRODUCT      Pikatea Keyboard KP69
 
-#define VIAL_KEYBOARD_UID {0xF2, 0x82, 0x4F, 0x07, 0x86, 0xC5, 0x30, 0x45}
-#define VIAL_ENCODER_DEFAULT { KC_VOLD, KC_VOLU, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS }
+#define VIAL_KEYBOARD_UID {0x44, 0x1D, 0x39, 0x46, 0x42, 0x84, 0xDF, 0x02}
+#define VIAL_ENCODER_DEFAULT { KC_VOLD, KC_VOLU, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS }
 
 /* key matrix size */
-#define MATRIX_ROWS 1
-#define MATRIX_COLS 6
+#define MATRIX_ROWS 5
+#define MATRIX_COLS 15
 
 /*
  * Keyboard Matrix Assignments
@@ -43,8 +43,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *                  ROW2COL = ROW = Anode (+), COL = Cathode (-, marked on diode)
  *
  */
-#define MATRIX_COL_PINS { D1, D0, D4, C6, D7, E6}
-#define MATRIX_ROW_PINS { D3 }
+#define MATRIX_COL_PINS { F1,B0,C6,C7,B6,B5,D6,D4,D5,D3,D2,B7,B3,B1,B2}
+#define MATRIX_ROW_PINS { E6,F0,F6,F5,F4, }
 #define UNUSED_PINS
 
 /* COL2ROW, ROW2COL */
@@ -61,8 +61,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define LED_COMPOSE_PIN B3
 //#define LED_KANA_PIN B4
 
-#define ENCODERS_PAD_A { B4 }
-#define ENCODERS_PAD_B { B5 }
+#define ENCODERS_PAD_A { D7 }
+#define ENCODERS_PAD_B { B4 }
 #define ENCODER_RESOLUTION 4
 
 //#define BACKLIGHT_PIN B7

@@ -25,21 +25,22 @@ please replace this if you modify the code
 /* USB Device descriptor parameter */
 
 
-/* Change these if you modify the code */
-#define VENDOR_ID       0x16D0
-#define PRODUCT_ID      0x10A6
-/* Change these if you modify the code */
-
-#define DEVICE_VER      0xFFFD
+#define VENDOR_ID       0x5049
+#define PRODUCT_ID      0x0006
+#define DEVICE_VER      0x0001
 #define MANUFACTURER    Pikatea and Griffin Barrett
-#define PRODUCT         funn_gus_prototype
+#define PRODUCT         FinnGus
 
 /* key matrix size */
 #define MATRIX_ROWS 8
 #define MATRIX_COLS 9
 
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
-#define DEBOUNCE 4
+#define DEBOUNCE 10
+
+#define VIAL_KEYBOARD_UID {0xE6, 0xBB, 0x5F, 0x4D, 0xD8, 0xD9, 0x94, 0x5E}
+#define VIAL_ENCODER_DEFAULT { KC_VOLD, KC_VOLU, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS }
+#define DYNAMIC_KEYMAP_LAYER_COUNT 3
 
 
 #define MATRIX_ROW_PINS { B1, B3, B2 }
@@ -60,7 +61,7 @@ Only one bit changes per row change, so there should be no timing related digita
 
 #define MATRIX_COL_PINS { D3, D2, D7, E6, F6, B6, F7, B4, B5 }
 
-#define MATRIX_IO_DELAY 15
+#define MATRIX_IO_DELAY 5
 
 /* DIODE_DIRECTION: COL2ROW = COL = Anode (+), ROW = Cathode (-, marked on diode)
  *                  ROW2COL = ROW = Anode (+), COL = Cathode (-, marked on diode)
@@ -72,3 +73,6 @@ Only one bit changes per row change, so there should be no timing related digita
 #define ENCODERS_PAD_A { F4 }
 #define ENCODERS_PAD_B { F5 }
 #define ENCODER_RESOLUTION 4
+
+
+#define NO_USB_STARTUP_CHECK

@@ -24,7 +24,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ENT,  KC_ESC,  KC_BSPC, KC_TAB,  KC_SPC,  KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC,
     KC_BSLS, KC_SCLN, KC_QUOT, KC_GRV,  KC_COMM, KC_DOT,  KC_SLSH, KC_CAPS, KC_F1,
     KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,
-    KC_F11,  KC_F12,  KC_PSCR, KC_DEL,  KC_PGUP, KC_PGDN, KC_LEFT, KC_DOWN, KC_UP
+    KC_F11,  KC_F12,  KC_HOME, KC_DEL,  KC_PGUP, KC_PGDN, KC_LEFT, KC_DOWN, KC_UP
   )
 
 };
@@ -52,3 +52,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 }
 
 */
+
+#ifdef ENCODER_ENABLE
+bool encoder_update_user(uint8_t index, bool clockwise) {
+    // Volume control
+    if (!clockwise) {
+        tap_code(KC_VOLU);
+    } else {
+        tap_code(KC_VOLD);
+    }
+    return true;
+}
+#endif

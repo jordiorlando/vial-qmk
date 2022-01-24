@@ -2,7 +2,7 @@
 MCU = atmega32u4
 
 # Bootloader selection
-BOOTLOADER = caterina
+BOOTLOADER = atmel-dfu
 
 # Build Options
 #   change yes to no to disable
@@ -23,10 +23,3 @@ AUDIO_ENABLE = no           # Audio output
 TAP_DANCE_ENABLE = no
 ENCODER_ENABLE = yes
 
-# special sauce for this keyboard
-DEBOUNCE_TYPE = sym_eager_pk    # Debounce using eager_pk.
-CUSTOM_MATRIX = lite        # Custom matrix that polls at 7000hz instead of a measly 2000hz.
-LTO_ENABLE = yes            # smaller binary
-SRC += matrix.c
-
-# Also remember to open tmk's rules.mk and set compilation optimization to 3
