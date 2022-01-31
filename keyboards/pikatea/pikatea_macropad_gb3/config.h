@@ -65,6 +65,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define ENCODERS_PAD_B { D4 }
 #define ENCODER_RESOLUTION 4
 
+#define RGBLIGHT_ANIMATIONS
+#define RGBLED_NUM 7
+#define RGB_DI_PIN B3
+
 //#define BACKLIGHT_PIN B7
 //#define BACKLIGHT_LEVELS 3
 //#define BACKLIGHT_BREATHING
