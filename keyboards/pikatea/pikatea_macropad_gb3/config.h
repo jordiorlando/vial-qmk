@@ -24,7 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT_ID   0x0002
 #define DEVICE_VER   0x0001
 #define MANUFACTURER Jack_Kester
-#define PRODUCT      Pikatea Macropad
+#define PRODUCT      Pikatea Macropad GB3
 
 #define VIAL_KEYBOARD_UID {0xF2, 0x82, 0x4F, 0x07, 0x86, 0xC5, 0x30, 0x45}
 #define VIAL_ENCODER_DEFAULT { KC_VOLD, KC_VOLU, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS }
