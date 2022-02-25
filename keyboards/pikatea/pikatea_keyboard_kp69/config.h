@@ -61,8 +61,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define LED_COMPOSE_PIN B3
 //#define LED_KANA_PIN B4
 
-#define ENCODERS_PAD_A { D4 }
-#define ENCODERS_PAD_B { B7 }
+#define ENCODERS_PAD_A { B4 }
+#define ENCODERS_PAD_B { D7 }
 #define ENCODER_RESOLUTION 4
 
 //#define BACKLIGHT_PIN B7
