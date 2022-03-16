@@ -14,4 +14,4 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "pikatea_macropad_xl1.h"
+#include "pikatea_macropad_r26_kit.h"
