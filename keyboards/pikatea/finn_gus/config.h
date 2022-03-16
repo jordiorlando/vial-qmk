@@ -26,7 +26,7 @@ please replace this if you modify the code
 
 
 #define VENDOR_ID       0x5049
-#define PRODUCT_ID      0x0006
+#define PRODUCT_ID      0x0005
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    Pikatea and Griffin Barrett
 #define PRODUCT         FinnGus

@@ -21,10 +21,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID    0x5049
-#define PRODUCT_ID   0x0003
+#define PRODUCT_ID   0x000A
 #define DEVICE_VER   0x0001
 #define MANUFACTURER Jack_Kester
-#define PRODUCT      Pikatea Macropad GB3
+#define PRODUCT      Pikatea Macropad GB4
 
 #define VIAL_KEYBOARD_UID {0xF2, 0x82, 0x4F, 0x07, 0x86, 0xC5, 0x30, 0x45}
 #define VIAL_ENCODER_DEFAULT { KC_VOLD, KC_VOLU, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS }
@@ -43,63 +43,48 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *                  ROW2COL = ROW = Anode (+), COL = Cathode (-, marked on diode)
  *
  */
-#define MATRIX_COL_PINS { F1, F0, D7, B4, E6, B5, C6, D1}
+#define MATRIX_COL_PINS { D4, B6, B5, B4, B1, B0, E6, F0 }
 #define MATRIX_ROW_PINS { F7 }
 #define UNUSED_PINS
 
 /* COL2ROW, ROW2COL */
 #define DIODE_DIRECTION COL2ROW
 
-/*
- * Split Keyboard specific options, make sure you have 'SPLIT_KEYBOARD = yes' in your rules.mk, and define SOFT_SERIAL_PIN.
- */
-#define SOFT_SERIAL_PIN D0  // or D1, D2, D3, E6
-
-//#define LED_NUM_LOCK_PIN B0
-//#define LED_CAPS_LOCK_PIN B1
-//#define LED_SCROLL_LOCK_PIN B2
-//#define LED_COMPOSE_PIN B3
-//#define LED_KANA_PIN B4
-
-#define ENCODERS_PAD_A { D0 }
-#define ENCODERS_PAD_B { D4 }
+#define ENCODERS_PAD_A { D6 }
+#define ENCODERS_PAD_B { D7 }
 #define ENCODER_RESOLUTION 4
 
-#define RGBLIGHT_ANIMATIONS
-#define RGBLED_NUM 7
-#define RGB_DI_PIN B3
+/* RBG settings */
+#define RGB_DI_PIN C6
 
-//#define BACKLIGHT_PIN B7
-//#define BACKLIGHT_LEVELS 3
-//#define BACKLIGHT_BREATHING
-
-//#define RGB_DI_PIN E2
-//#ifdef RGB_DI_PIN
-//#    define RGBLED_NUM 16
-//#    define RGBLIGHT_HUE_STEP 8
-//#    define RGBLIGHT_SAT_STEP 8
-//#    define RGBLIGHT_VAL_STEP 8
-//#    define RGBLIGHT_LIMIT_VAL 255 /* The maximum brightness level */
-//#    define RGBLIGHT_SLEEP  /* If defined, the RGB lighting will be switched off when the host goes to sleep */
+#ifdef RGB_DI_PIN
+#    define RGBLED_NUM 7
+#    define RGBLIGHT_HUE_STEP 8
+#    define RGBLIGHT_SAT_STEP 8
+#    define RGBLIGHT_VAL_STEP 8
+#    define RGBLIGHT_LIMIT_VAL 255 /* The maximum brightness level */
+#    define RGBLIGHT_SLEEP  /* If defined, the RGB lighting will be switched off when the host goes to sleep */
 /*== all animations enable ==*/
-//#    define RGBLIGHT_ANIMATIONS
+#    define RGBLIGHT_ANIMATIONS
 /*== or choose animations ==*/
-//#    define RGBLIGHT_EFFECT_BREATHING
-//#    define RGBLIGHT_EFFECT_RAINBOW_MOOD
-//#    define RGBLIGHT_EFFECT_RAINBOW_SWIRL
-//#    define RGBLIGHT_EFFECT_SNAKE
-//#    define RGBLIGHT_EFFECT_KNIGHT
-//#    define RGBLIGHT_EFFECT_CHRISTMAS
-//#    define RGBLIGHT_EFFECT_STATIC_GRADIENT
-//#    define RGBLIGHT_EFFECT_RGB_TEST
-//#    define RGBLIGHT_EFFECT_ALTERNATING
+// #    define RGBLIGHT_EFFECT_BREATHING
+// #    define RGBLIGHT_EFFECT_RAINBOW_MOOD
+// #    define RGBLIGHT_EFFECT_RAINBOW_SWIRL
+// #    define RGBLIGHT_EFFECT_SNAKE
+// #    define RGBLIGHT_EFFECT_KNIGHT
+// #    define RGBLIGHT_EFFECT_CHRISTMAS
+// #    define RGBLIGHT_EFFECT_STATIC_GRADIENT
+// #    define RGBLIGHT_EFFECT_RGB_TEST
+// #    define RGBLIGHT_EFFECT_ALTERNATING
 /*== customize breathing effect ==*/
 /*==== (DEFAULT) use fixed table instead of exp() and sin() ====*/
-//#    define RGBLIGHT_BREATHE_TABLE_SIZE 256      // 256(default) or 128 or 64
+#    define RGBLIGHT_BREATHE_TABLE_SIZE 256      // 256(default) or 128 or 64
 /*==== use exp() and sin() ====*/
-//#    define RGBLIGHT_EFFECT_BREATHE_CENTER 1.85  // 1 to 2.7
-//#    define RGBLIGHT_EFFECT_BREATHE_MAX    255   // 0 to 255
-//#endif
+#    define RGBLIGHT_EFFECT_BREATHE_CENTER 1.85  // 1 to 2.7
+#    define RGBLIGHT_EFFECT_BREATHE_MAX    255   // 0 to 255
+/* default rgb */
+#    define RGBLIGHT_DEFAULT_MODE RGBLIGHT_MODE_RGB_TEST
+#endif
 
 /* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
 #define DEBOUNCE 5
