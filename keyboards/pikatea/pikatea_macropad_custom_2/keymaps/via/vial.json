@@ -1,0 +1,45 @@
+{
+    "name": "Pikatea Macropad GB3",
+    "vendorId": "0x5049",
+    "productId": "0x0002",
+    "lighting": "none",
+    "matrix": { "rows": 1, "cols": 8 },
+    "layouts": {
+      "keymap": [
+        [
+            "0,0",
+            "0,1",
+            "0,2",
+            {
+              "x": 1.25
+            },
+            "0,3",
+            {
+              "x": 1.5
+            },
+            "0,4",
+            {
+              "x": 1.5
+            },
+            "0,5"
+        ],
+        [
+            {
+              "x": 3.75
+            },
+            "0,0\n\n\n\n\n\n\n\n\ne",
+            "0,1\n\n\n\n\n\n\n\n\ne",
+            {
+              "x": 0.5
+            },
+            "1,0\n\n\n\n\n\n\n\n\ne",
+            "1,1\n\n\n\n\n\n\n\n\ne",
+            {
+              "x": 0.5
+            },
+            "2,0\n\n\n\n\n\n\n\n\ne",
+            "2,1\n\n\n\n\n\n\n\n\ne"
+        ]
+      ]
+    }
+  }

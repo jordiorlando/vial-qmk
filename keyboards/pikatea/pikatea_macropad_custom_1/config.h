@@ -24,28 +24,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT_ID   0x0009
 #define DEVICE_VER   0x0001
 #define MANUFACTURER Jack_Kester
-#define PRODUCT      Pikatea Macropad Dud
+#define PRODUCT      Pikatea Macropad Custom
 
 #define VIAL_KEYBOARD_UID {0xB4, 0x5F, 0x53, 0x90, 0x65, 0x4E, 0xC4, 0xDB}
-#define VIAL_ENCODER_DEFAULT { KC_VOLD, KC_VOLU, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS }
+#define VIAL_ENCODER_DEFAULT { KC_VOLD, KC_VOLU, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS }
 
 /* key matrix size */
 #define MATRIX_ROWS 1
-#define MATRIX_COLS 6
+#define MATRIX_COLS 12
 
-/*
- * Keyboard Matrix Assignments
- *
- * Change this to how you wired your keyboard
- * COLS: AVR pins used for columns, left to right
- * ROWS: AVR pins used for rows, top to bottom
- * DIODE_DIRECTION: COL2ROW = COL = Anode (+), ROW = Cathode (-, marked on diode)
- *                  ROW2COL = ROW = Anode (+), COL = Cathode (-, marked on diode)
- *
- */
-#define MATRIX_COL_PINS { B6, B2, B3, B1, F7, F6}
-#define MATRIX_ROW_PINS { B4 }
-#define UNUSED_PINS
+#define DIRECT_PINS {{F4, F5, F6, F7, B1, B3, B2, B6, B5, B4, E6, D7}}
 
 /* COL2ROW, ROW2COL */
 #define DIODE_DIRECTION COL2ROW
@@ -61,13 +49,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define LED_COMPOSE_PIN B3
 //#define LED_KANA_PIN B4
 
-#define ENCODERS_PAD_A { C6, D1, D3}
-#define ENCODERS_PAD_B { D4, D0, D2}
+#define ENCODERS_PAD_A { D3, D1, D4 }
+#define ENCODERS_PAD_B { D2, D0, C6 }
 #define ENCODER_RESOLUTION 4
 
-#define RGBLIGHT_ANIMATIONS
-#define RGBLED_NUM 7
-#define RGB_DI_PIN B3
+// #define RGBLIGHT_ANIMATIONS
+// #define RGBLED_NUM 7
+// #define RGB_DI_PIN B3
 
 //#define BACKLIGHT_PIN B7
 //#define BACKLIGHT_LEVELS 3
