@@ -26,7 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MANUFACTURER Jack_Kester
 #define PRODUCT      Pikatea Macropad R26
 
-#define VIAL_KEYBOARD_UID {0x3E, 0x47, 0x90, 0x16, 0x39, 0x06, 0xDB, 0x9D}
+#define VIAL_KEYBOARD_UID {0x4C, 0xC8, 0x95, 0x4E, 0x7C, 0xA2, 0x44, 0x57}
 #define VIAL_ENCODER_DEFAULT { KC_VOLD, KC_VOLU, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS }
 
 /* key matrix size */
@@ -56,8 +56,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define LED_COMPOSE_PIN B3
 //#define LED_KANA_PIN B4
 
-#define ENCODERS_PAD_A { D4 }
-#define ENCODERS_PAD_B { D0 }
+#define ENCODERS_PAD_A { D0 }
+#define ENCODERS_PAD_B { D4 }
 #define ENCODER_RESOLUTION 4
 
 //#define BACKLIGHT_PIN B7

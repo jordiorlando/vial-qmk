@@ -17,7 +17,7 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_all(
-        KC_F15,  KC_F16,   KC_F17,    KC_F18,    KC_F19,
+        KC_F15,  KC_MEDIA_PREV_TRACK,   KC_MUTE,    KC_MEDIA_NEXT_TRACK,    KC_MEDIA_PLAY_PAUSE,
         KC_F20,  KC_F21,              KC_F22,    KC_F23
     ),
     [1] = LAYOUT_all(
