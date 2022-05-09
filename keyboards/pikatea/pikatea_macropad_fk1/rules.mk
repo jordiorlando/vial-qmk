@@ -22,4 +22,5 @@ BLUETOOTH_ENABLE = no       # Enable Bluetooth
 AUDIO_ENABLE = no           # Audio output
 TAP_DANCE_ENABLE = yes
 ENCODER_ENABLE = yes
+MIDI_ENABLE = yes
 
