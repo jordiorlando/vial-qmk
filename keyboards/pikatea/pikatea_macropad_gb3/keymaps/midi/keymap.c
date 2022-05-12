@@ -30,7 +30,7 @@ enum custom_keycodes {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_all(
-        KC_F13,   KC_F14, KC_F15,   KC_F16,   KC_MEDIA_PREV_TRACK,    KC_MEDIA_PLAY_PAUSE,    KC_MEDIA_NEXT_TRACK,    MIDI_CC80
+        KC_F13,   KC_F14, KC_F15,   KC_F16,   KC_MEDIA_PREV_TRACK,    KC_MEDIA_PLAY_PAUSE,    KC_MEDIA_NEXT_TRACK,    KC_MUTE
     ),
     [1] = LAYOUT_all(
         _______,   _______,   _______,   _______,   _______,    _______,    _______,    _______

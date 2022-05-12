@@ -44,15 +44,15 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
         }
     } else if (index == 1) {
         if (!clockwise) {
-            tap_code(KC_4);
+            tap_code(KC_F13);
         } else {
-            tap_code(KC_5);
+            tap_code(KC_F14);
         }
     } else if (index == 2) {
         if (!clockwise) {
-            tap_code(KC_6);
+            tap_code(KC_F15);
         } else {
-            tap_code(KC_7);
+            tap_code(KC_F16);
         }
     }
 return true;
