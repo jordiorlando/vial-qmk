@@ -27,13 +27,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT      Pikatea Macropad Custom
 
 #define VIAL_KEYBOARD_UID {0xB4, 0x5F, 0x53, 0x90, 0x65, 0x4E, 0xC4, 0xDB}
-#define VIAL_ENCODER_DEFAULT { KC_VOLD, KC_VOLU, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS }
+#define VIAL_ENCODER_DEFAULT { KC_VOLD, KC_VOLU, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS }
 
 /* key matrix size */
 #define MATRIX_ROWS 1
-#define MATRIX_COLS 12
+#define MATRIX_COLS 14
 
-#define DIRECT_PINS {{F4, F5, F6, F7, B1, B3, B2, B6, B5, B4, E6, D7}}
+#define DIRECT_PINS {{F4, F5, F6, F7, B1, B3, B2, B6, B5, B4, E6, D7, C6, D4}}
 
 /* COL2ROW, ROW2COL */
 #define DIODE_DIRECTION COL2ROW
@@ -49,8 +49,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define LED_COMPOSE_PIN B3
 //#define LED_KANA_PIN B4
 
-#define ENCODERS_PAD_A { D3, D1, D4 }
-#define ENCODERS_PAD_B { D2, D0, C6 }
+#define ENCODERS_PAD_A { D3, D1 }
+#define ENCODERS_PAD_B { D2, D0 }
 #define ENCODER_RESOLUTION 4
 
 // #define RGBLIGHT_ANIMATIONS
