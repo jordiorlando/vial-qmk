@@ -15,25 +15,12 @@
  */
 #include QMK_KEYBOARD_H
 
-// Defines names for use in layer keycodes and the keymap
-enum layer_number {
-    _BASE,
-    _LOWER,
-};
-
-// Defines the keycodes used by our macros in process_record_user
-// enum custom_keycodes {
-//     QMKBEST = SAFE_RANGE,
-//     QMKURL
-// };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_BASE] = LAYOUT_all(
-        KC_MEDIA_PREV_TRACK,    KC_MEDIA_PLAY_PAUSE,    KC_MEDIA_NEXT_TRACK,    KC_1, KC_2, KC_3
-    ),
-    [_LOWER] = LAYOUT_all(
-        KC_TRNS,   KC_TRNS, KC_TRNS,   KC_TRNS,  KC_TRNS,    KC_TRNS
-    )
+    [0] = LAYOUT_direct(KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_A, KC_B, KC_C, KC_D),
+    [1] = LAYOUT_direct(_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______),
+    [2] = LAYOUT_direct(_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______),
+    [3] = LAYOUT_direct(_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______)
 };
 
 
@@ -48,17 +35,12 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
         }
     } else if (index == 1) {
         if (!clockwise) {
-            tap_code(KC_4);
+            tap_code(KC_F13);
         } else {
-            tap_code(KC_5);
-        }
-    } else if (index == 2) {
-        if (!clockwise) {
-            tap_code(KC_6);
-        } else {
-            tap_code(KC_7);
+            tap_code(KC_F14);
         }
     }
 return true;
 }
 #endif
+

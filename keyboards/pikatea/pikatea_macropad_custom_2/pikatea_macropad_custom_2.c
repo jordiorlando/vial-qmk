@@ -14,7 +14,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "pikatea_macropad_custom.h"
+#include "pikatea_macropad_custom_2.h"
 
 #define GROUND_PIN_F(PIN) setPinOutput(PIN);writePinLow(PIN);
 
@@ -22,15 +22,22 @@ void keyboard_pre_init_user(void) {
   // Call the keyboard pre init code.
 
   //ground the pins that we need to ground
+  // F4, F5, F6, F7, B1, B3, B2, B6, B5, B4, E6, D7
 
-  GROUND_PIN_F(D3); //key1
-  GROUND_PIN_F(B4); //key2
-  GROUND_PIN_F(E6); //key3
-  GROUND_PIN_F(C6); //key4
-  GROUND_PIN_F(D0); //key5
-  GROUND_PIN_F(B6); //knob key
-  GROUND_PIN_F(F5); //encoder 1
-  GROUND_PIN_F(B1); //encoder 2
+  GROUND_PIN_F(F4);
+  GROUND_PIN_F(F5);
+  GROUND_PIN_F(F6);
+  GROUND_PIN_F(F7);
+  GROUND_PIN_F(B1);
+  GROUND_PIN_F(B3);
+  GROUND_PIN_F(B2);
+  GROUND_PIN_F(B6);
+  GROUND_PIN_F(B5);
+  GROUND_PIN_F(B4);
+  GROUND_PIN_F(E6);
+  GROUND_PIN_F(D7);
+  GROUND_PIN_F(C6);
+  GROUND_PIN_F(D4);
 
 }
 

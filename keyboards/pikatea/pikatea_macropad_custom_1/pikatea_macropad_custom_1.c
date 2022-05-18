@@ -14,21 +14,33 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#pragma once
+#include "pikatea_macropad_custom_1.h"
 
-#include "quantum.h"
+#define GROUND_PIN_F(PIN) setPinOutput(PIN);writePinLow(PIN);
 
-/* This is a shortcut to help you visually see your layout.
- *
- * The first section contains all of the arguments representing the physical
- * layout of the board and position of the keys.
- *
- * The second converts the arguments into a two-dimensional array which
- * represents the switch matrix.
- */
-#define LAYOUT_direct( \
-    k00, k01, k02, k03, k04, k05, k06, k07, k08, k09, k10, k11, k12, k13 \
-) \
-{ \
-    { k00, k01, k02, k03, k04, k05, k06, k07, k08, k09, k10, k11, k12, k13 } \
+void keyboard_pre_init_user(void) {
+  // Call the keyboard pre init code.
+
+  //ground the pins that we need to ground
+  // F4, F5, F6, F7, B1, B3, B2, B6, B5, B4, E6, D7
+
+  GROUND_PIN_F(F4);
+  GROUND_PIN_F(F5);
+  GROUND_PIN_F(F6);
+  GROUND_PIN_F(F7);
+  GROUND_PIN_F(B1);
+  GROUND_PIN_F(B3);
+  GROUND_PIN_F(B2);
+  GROUND_PIN_F(B6);
+  GROUND_PIN_F(B5);
+  GROUND_PIN_F(B4);
+  GROUND_PIN_F(E6);
+  GROUND_PIN_F(D7);
+  GROUND_PIN_F(C6);
+  GROUND_PIN_F(D4);
+  GROUND_PIN_F(D0);
+  GROUND_PIN_F(D1);
+
 }
+
+#undef GROUND_PIN_F

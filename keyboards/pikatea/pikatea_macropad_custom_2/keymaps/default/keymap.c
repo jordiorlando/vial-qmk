@@ -28,12 +28,8 @@ enum layer_number {
 // };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_BASE] = LAYOUT_all(
-        KC_MEDIA_PREV_TRACK,    KC_MEDIA_PLAY_PAUSE,    KC_MEDIA_NEXT_TRACK,    KC_1, KC_2, KC_3
-    ),
-    [_LOWER] = LAYOUT_all(
-        KC_TRNS,   KC_TRNS, KC_TRNS,   KC_TRNS,  KC_TRNS,    KC_TRNS
-    )
+    [_BASE] = LAYOUT_direct(KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_A, KC_B),
+    [_LOWER] = LAYOUT_direct(KC_1, KC_2, KC_3, KC_4, KC_5, KC_0, KC_7, KC_8, KC_9, KC_0, KC_A, KC_B)
 };
 
 
@@ -41,19 +37,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 bool encoder_update_user(uint8_t index, bool clockwise) {
     // Volume control
     if (index == 0) {
-        if (!clockwise) {
+        if (clockwise) {
             tap_code(KC_VOLU);
         } else {
             tap_code(KC_VOLD);
         }
     } else if (index == 1) {
-        if (!clockwise) {
+        if (clockwise) {
             tap_code(KC_4);
         } else {
             tap_code(KC_5);
         }
     } else if (index == 2) {
-        if (!clockwise) {
+        if (clockwise) {
             tap_code(KC_6);
         } else {
             tap_code(KC_7);
