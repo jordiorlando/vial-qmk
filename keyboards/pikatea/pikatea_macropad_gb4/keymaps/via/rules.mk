@@ -1,5 +1,3 @@
-ENCODER_ENABLE = yes
 VIA_ENABLE = yes
-VIAL_ENABLE = yes
-VIAL_INSECURE = yes
-VIAL_ENCODERS_ENABLE = yes
+
+SRC += encoder_action.c

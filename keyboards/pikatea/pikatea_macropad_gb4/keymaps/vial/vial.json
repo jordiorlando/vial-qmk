@@ -1,9 +1,9 @@
 {
-    "name": "Pikatea Macropad GB3",
+    "name": "Pikatea Macropad GB4",
     "vendorId": "0x5049",
-    "productId": "0x0002",
+    "productId": "0x001A",
     "lighting": "qmk_rgblight",
-    "matrix": { "rows": 1, "cols": 8 },
+    "matrix": { "rows": 2, "cols": 8 },
     "layouts": {
       "keymap": [
         [
@@ -23,8 +23,8 @@
             {
                 "x": 7.5
             },
-            "0,0\n\n\n\n\n\n\n\n\ne",
-            "0,1\n\n\n\n\n\n\n\n\ne"
+            "1,0",
+            "1,1"
         ]
       ]
     }

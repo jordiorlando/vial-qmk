@@ -21,16 +21,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID    0x5049
-#define PRODUCT_ID   0x000A
+#define PRODUCT_ID   0x001A
 #define DEVICE_VER   0x0001
 #define MANUFACTURER Jack_Kester
 #define PRODUCT      Pikatea Macropad GB4
 
-#define VIAL_KEYBOARD_UID {0xF2, 0x82, 0x4F, 0x07, 0x86, 0xC5, 0x30, 0x45}
-#define VIAL_ENCODER_DEFAULT { KC_VOLD, KC_VOLU, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS }
+#define VIAL_KEYBOARD_UID {0x2B, 0x72, 0x3E, 0x47, 0x50, 0x3C, 0x86, 0x7D}
+
 
 /* key matrix size */
-#define MATRIX_ROWS 1
+#define MATRIX_ROWS 2
 #define MATRIX_COLS 8
 
 /*
@@ -44,15 +44,20 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
 #define MATRIX_COL_PINS { D4, B6, B5, B4, B1, B0, E6, F0 }
-#define MATRIX_ROW_PINS { F7 }
+#define MATRIX_ROW_PINS { F7, NO_PIN }
 #define UNUSED_PINS
 
 /* COL2ROW, ROW2COL */
 #define DIODE_DIRECTION COL2ROW
 
+/* Encoder setup */
+#define ENCODERS 1
+
 #define ENCODERS_PAD_A { D6 }
 #define ENCODERS_PAD_B { D7 }
-#define ENCODER_RESOLUTION 4
+
+#define ENCODERS_CW_KEY  { { 1, 1 } }
+#define ENCODERS_CCW_KEY { { 0, 1 } }
 
 /* RBG settings */
 #define RGB_DI_PIN C6
@@ -139,7 +144,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define NO_ACTION_TAPPING
 //#define NO_ACTION_ONESHOT
 
-/* disable these deprecated features by default */
 #define NO_ACTION_MACRO
 #define NO_ACTION_FUNCTION
 
