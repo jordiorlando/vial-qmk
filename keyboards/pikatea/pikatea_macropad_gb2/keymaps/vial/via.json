@@ -1,0 +1,22 @@
+{
+    "name": "Pikatea Macropad GB2",
+    "vendorId": "0x5049",
+    "productId": "0x0001",
+    "lighting": "none",
+    "matrix": { "rows": 1, "cols": 6 },
+    "layouts": {
+        "keymap": [
+            [
+                "0,0",
+                "0,1",
+                "0,2",
+                "0,3",
+                "0,4",
+                {
+                    "x": 1
+                },
+                "0,5"
+            ]
+          ]
+    }
+  }

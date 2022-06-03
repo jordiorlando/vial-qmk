@@ -20,7 +20,9 @@ BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE = yes        # Enable keyboard RGB underglow
 BLUETOOTH_ENABLE = no       # Enable Bluetooth
 AUDIO_ENABLE = no           # Audio output
-TAP_DANCE_ENABLE = yes
-COMBO_ENABLE = yes
+TAP_DANCE_ENABLE = no
+COMBO_ENABLE = no
 ENCODER_ENABLE = yes
+LTO_ENABLE = yes
+
 
