@@ -1,4 +1,4 @@
-/* Copyright 2020 Jack Kester
+/* Copyright 2022 Jack Kester
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,3 +15,19 @@
  */
 
 #include "pikatea_keyboard_kp69.h"
+
+#if !defined(VIA_ENABLE) && !defined(MIDI_ENABLE) && defined(ENCODER_ENABLE)
+bool encoder_update_user(uint8_t index, bool clockwise) {
+    if (!encoder_update_user(index, clockwise)) {
+        return false;
+    }
+    if (index == 0) {
+        if (clockwise) {
+            tap_code(KC_VOLU);
+        } else {
+            tap_code(KC_VOLD);
+        }
+    }
+return true;
+}
+#endif

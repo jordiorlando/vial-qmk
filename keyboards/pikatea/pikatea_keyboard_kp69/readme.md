@@ -1,4 +1,6 @@
-# pikatea
+# pikatea_keyboard_kp69
+
+![pikatea](https://i.imgur.com/a5DHc3l.jpg)
 
 * Keyboard Maintainer: [Jack Kester](https://github.com/JackPikatea)
 * Hardware Supported: *M32u4*
