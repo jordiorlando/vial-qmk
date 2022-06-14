@@ -1,7 +1,7 @@
 {
     "name": "Pikatea FinnGus",
     "vendorId": "0x5049",
-    "productId": "0x0006",
+    "productId": "0x0014",
     "lighting": "none",
     "matrix": { "rows": 8, "cols": 9 },
     "layouts": {

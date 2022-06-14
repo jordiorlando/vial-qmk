@@ -1,4 +1,6 @@
 /*
+Copyright 2022 Jack Kester
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 2 of the License, or
@@ -12,7 +14,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-
 */
 
 #pragma once
@@ -25,20 +26,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define VENDOR_ID       0x5049
 #define PRODUCT_ID      0x0014
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    Pikatea
-#define PRODUCT         FinnGus
+#define MANUFACTURER    Jack_Kester
+#define PRODUCT         Pikatea FinnGus
 
 /* key matrix size */
-#define MATRIX_ROWS 8
+#define MATRIX_ROWS 9
 #define MATRIX_COLS 9
-
-/* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
-#define DEBOUNCE 10
-
-#define VIAL_KEYBOARD_UID {0xE6, 0xBB, 0x5F, 0x4D, 0xD8, 0xD9, 0x94, 0x5E}
-#define VIAL_ENCODER_DEFAULT { KC_VOLD, KC_VOLU, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS }
-#define DYNAMIC_KEYMAP_LAYER_COUNT 3
-
 
 #define MATRIX_ROW_PINS { B1, B3, B2 }
 #define MATRIX_ROW_PIN_COUNT 3
@@ -66,10 +59,18 @@ Only one bit changes per row change, so there should be no timing related digita
 */
 #define DIODE_DIRECTION COL2ROW
 
-//encoder
 #define ENCODERS_PAD_A { F4 }
 #define ENCODERS_PAD_B { F5 }
+
 #define ENCODER_RESOLUTION 4
 
+/* Debounce reduces chatter (unintended double-presses) - set 0 if debouncing is not needed */
+#define DEBOUNCE 10
 
-#define NO_USB_STARTUP_CHECK
+
+/* vial stuff */
+
+
+#define VIAL_KEYBOARD_UID {0xE6, 0xBB, 0x5F, 0x4D, 0xD8, 0xD9, 0x94, 0x5E}
+#define VIAL_ENCODER_DEFAULT { KC_VOLD, KC_VOLU, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS }
+#define DYNAMIC_KEYMAP_LAYER_COUNT 3
