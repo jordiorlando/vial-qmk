@@ -1,7 +1,7 @@
 {
-    "name": "Pikatea Macropad R26",
+    "name": "Pikatea Macropad R26 Round 1",
     "vendorId": "0x5049",
-    "productId": "0x0008",
+    "productId": "0x0015",
     "lighting": "none",
     "matrix": { "rows": 2, "cols": 5 },
     "layouts": {

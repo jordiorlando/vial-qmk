@@ -21,10 +21,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID    0x5049
-#define PRODUCT_ID   0x0008
+#define PRODUCT_ID   0x0015
 #define DEVICE_VER   0x0001
 #define MANUFACTURER Jack_Kester
-#define PRODUCT      Pikatea Macropad R26
+#define PRODUCT      Pikatea Macropad R26 R1
 
 #define VIAL_KEYBOARD_UID {0x4C, 0xC8, 0x95, 0x4E, 0x7C, 0xA2, 0x44, 0x57}
 #define VIAL_ENCODER_DEFAULT { KC_VOLD, KC_VOLU, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS }

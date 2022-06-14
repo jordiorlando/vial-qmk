@@ -1,7 +1,7 @@
 {
     "name": "Pikatea Macropad FK1",
     "vendorId": "0x5049",
-    "productId": "0x0004",
+    "productId": "0x0013",
     "lighting": "none",
     "matrix": { "rows": 1, "cols": 6 },
     "layouts": {

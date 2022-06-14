@@ -1,7 +1,7 @@
 {
     "name": "Pikatea Macropad Custom",
     "vendorId": "0x5049",
-    "productId": "0x0009",
+    "productId": "0x0016",
     "lighting": "none",
     "matrix": { "rows": 1, "cols": 16 },
     "layouts": {

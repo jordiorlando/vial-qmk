@@ -1,7 +1,7 @@
 {
     "name": "Pikatea Macropad GB4",
     "vendorId": "0x5049",
-    "productId": "0x001A",
+    "productId": "0x001B",
     "lighting": "qmk_rgblight",
     "matrix": { "rows": 2, "cols": 8 },
     "layouts": {

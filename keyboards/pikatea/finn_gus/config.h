@@ -12,9 +12,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-Independantly of the above copyright notice,
-the VENDOR_ID:PRODUCT_ID of 0x16D0:10A6 is trademark Griffin Barrett,
-please replace this if you modify the code
 
 */
 
@@ -26,9 +23,9 @@ please replace this if you modify the code
 
 
 #define VENDOR_ID       0x5049
-#define PRODUCT_ID      0x0005
+#define PRODUCT_ID      0x0014
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    Pikatea and Griffin Barrett
+#define MANUFACTURER    Pikatea
 #define PRODUCT         FinnGus
 
 /* key matrix size */
