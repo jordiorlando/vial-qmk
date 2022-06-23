@@ -43,7 +43,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *                  ROW2COL = ROW = Anode (+), COL = Cathode (-, marked on diode)
  *
  */
-#define DIRECT_PINS {{ B3, B1, D1, F4, F5, B2, B6, F7, F6}}
+#define DIRECT_PINS {{ B3, B1, D1, D7, C6, B2, B6, F7, F4}}
 
 /* COL2ROW, ROW2COL */
 #define DIODE_DIRECTION COL2ROW
