@@ -1,4 +1,4 @@
-/* Copyright 2020 Jack Kester
+/* Copyright 2022 Jack Kester
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,4 +14,18 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "pikatea_macropad_r26_LED_kit.h"
+#include "pikatea_macropad_r26_led_kit.h"
+
+#if !defined(VIA_ENABLE) && !defined(MIDI_ENABLE) && defined(ENCODER_ENABLE)
+bool encoder_update_kb(uint8_t index, bool clockwise) {
+    if (!encoder_update_user(index, clockwise)) {
+        return false;
+    }
+    if (clockwise) {
+        tap_code(KC_VOLD);
+    } else {
+        tap_code(KC_VOLU);
+    }
+    return true;
+}
+#endif

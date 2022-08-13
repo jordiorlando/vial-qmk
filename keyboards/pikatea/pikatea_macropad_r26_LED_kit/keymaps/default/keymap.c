@@ -1,4 +1,4 @@
-/* Copyright 2020 Jack Kester
+/* Copyright 2022 Jack Kester
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,39 +15,22 @@
  */
 #include QMK_KEYBOARD_H
 
-// Defines names for use in layer keycodes and the keymap
-enum layer_number {
-    _BASE,
-    _LOWER,
-};
-
-// Defines the keycodes used by our macros in process_record_user
-// enum custom_keycodes {
-//     QMKBEST = SAFE_RANGE,
-//     QMKURL
-// };
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [_BASE] = LAYOUT_all(
-        KC_F15,  KC_F16,   KC_F17,    KC_F18,    KC_F19,
+    [0] = LAYOUT_all(
+        KC_F15,  KC_MEDIA_PREV_TRACK,   KC_MUTE,    KC_MEDIA_NEXT_TRACK,    KC_MEDIA_PLAY_PAUSE,
         KC_F20,  KC_F21,              KC_F22,    KC_F23
     ),
-    [_LOWER] = LAYOUT_all(
-        KC_F15,  KC_F16,   KC_F17,    KC_F18,    KC_F19,
-        KC_F20,  KC_F21,              KC_F22,    KC_F23
+    [1] = LAYOUT_all(
+        _______,  _______,   _______,    _______,    _______,
+        _______,  _______,               _______,    _______
+    ),
+    [2] = LAYOUT_all(
+        _______,  _______,   _______,    _______,    _______,
+        _______,  _______,               _______,    _______
+    ),
+    [3] = LAYOUT_all(
+        _______,  _______,   _______,    _______,    _______,
+        _______,  _______,               _______,    _______
     )
 };
-
-
-#ifdef ENCODER_ENABLE
-bool encoder_update_user(uint8_t index, bool clockwise) {
-    // Volume control
-    if (!clockwise) {
-        tap_code(KC_VOLU);
-    } else {
-        tap_code(KC_VOLD);
-    }
-    return true;
-}
-#endif
 
