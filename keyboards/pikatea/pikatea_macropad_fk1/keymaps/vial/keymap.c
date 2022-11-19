@@ -19,7 +19,7 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
         KC_F15,    KC_F16,    KC_MPRV,    KC_MPLY,    KC_MNXT,    KC_MUTE
-    )
+    ),
 };
 
 #if defined(ENCODER_MAP_ENABLE)

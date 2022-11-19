@@ -19,7 +19,5 @@ RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 BLUETOOTH_ENABLE = no       # Enable Bluetooth
 AUDIO_ENABLE = no           # Audio output
 LTO_ENABLE = yes            # Link Time Optimization
-
 ENCODER_ENABLE = yes        # Rotary Encoder
-ENCODER_MAP_ENABLE = yes
 MIDI_ENABLE = yes           # USB MIDI
