@@ -22,8 +22,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 };
 
-
-#ifdef ENCODER_ENABLE
 bool encoder_update_user(uint8_t index, bool clockwise) {
     // Volume control
     if (clockwise) {
@@ -33,4 +31,3 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     }
     return true;
 }
-#endif
