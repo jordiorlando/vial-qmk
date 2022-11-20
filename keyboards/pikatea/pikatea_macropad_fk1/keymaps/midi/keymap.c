@@ -19,6 +19,7 @@
 
 #define ENCODER_ROW 0
 #define ENCODER_COL 5
+#define STEP_SIZE 4
 #define MIDI_CC_VOLUME 7
 #define MIDI_CC_MUTE 120
 
@@ -29,8 +30,6 @@ changes the Midi channel used. Compatible with Vial.
 extern MidiDevice midi_device;
 // Channel values
 uint8_t channelVal[6] = {127, 127, 127, 127, 127, 127};
-// Step size
-uint8_t stepSize = 2;
 // Current layer
 uint8_t currentLayer = 0;
 
@@ -51,10 +50,10 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
     encoderPos.col = 0;
     // Get the keycode for the current layer (catches KC_TRNS properly)
     uint16_t currentKeycode = keymap_key_to_keycode(currentLayer, encoderPos);
-    // Only do MIDI stuff if the encoder isn't assigned on this layer
-    if (currentKeycode == KC_NO || currentKeycode == KC_TRNS) {
-        // Increase or decrease the channel value by stepSize
-        channelVal[currentLayer] += clockwise ? stepSize : -stepSize;
+    // Only do MIDI stuff if the encoder is unassigned on this layer
+    if ((currentKeycode == KC_NO) || (currentKeycode == KC_TRNS)) {
+        // Increase or decrease the channel value by STEP_SIZE
+        channelVal[currentLayer] += clockwise ? STEP_SIZE : -STEP_SIZE;
         // Check for and correct overflow
         if (channelVal[currentLayer] > 127) {
             channelVal[currentLayer] = clockwise ? 127 : 0;
@@ -69,10 +68,11 @@ bool encoder_update_user(uint8_t index, bool clockwise) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // Only do stuff when the encoder button is pressed
-    if (record->event.key.row == ENCODER_ROW && record->event.key.col == ENCODER_COL && record->event.pressed) {
+    if ((record->event.key.row == ENCODER_ROW) && (record->event.key.col == ENCODER_COL) && record->event.pressed) {
         // Get the keycode for the current layer (catches KC_TRNS properly)
         uint16_t currentKeycode = keymap_key_to_keycode(currentLayer, record->event.key);
-        if (currentKeycode == KC_NO || currentKeycode == KC_TRNS) {
+        // Only do MIDI stuff if the encoder button is unassigned on this layer
+        if ((currentKeycode == KC_NO) || (currentKeycode == KC_TRNS)) {
             // Send a MIDI Mute Control Change (CC) message
             midi_send_cc(&midi_device, currentLayer, MIDI_CC_MUTE, 0);
             // Don't process this keycode any further
