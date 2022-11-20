@@ -17,6 +17,8 @@
 
 #include QMK_KEYBOARD_H
 
+#define ENCODER_ROW 0
+#define ENCODER_COL 5
 #define MIDI_CC_VOLUME 7
 #define MIDI_CC_MUTE 120
 
@@ -32,13 +34,9 @@ uint8_t stepSize = 2;
 // Current layer
 uint8_t currentLayer = 0;
 
-enum keycodes {
-    ENC_BTN = SAFE_RANGE
-};
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
-        LT(1,KC_F15), LT(2,KC_F16), LT(3,KC_MPRV), LT(4,KC_MPLY), LT(5,KC_MNXT), ENC_BTN
+        LT(1,KC_F15), LT(2,KC_F16), LT(3,KC_MPRV), LT(4,KC_MPLY), LT(5,KC_MNXT), KC_MUTE
     ),
 };
 
@@ -46,37 +44,40 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
     [0] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
 };
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-    case ENC_BTN:
-        if (record->event.pressed) {
-            if (currentLayer == 0) {
-                tap_code(KC_MUTE);
-            }
-            midi_send_cc(&midi_device, currentLayer, MIDI_CC_MUTE, 0);
+bool encoder_update_user(uint8_t index, bool clockwise) {
+    // Create a keypos_t variable that points to the encoder's location
+    keypos_t encoderPos;
+    encoderPos.row = clockwise ? KEYLOC_ENCODER_CW : KEYLOC_ENCODER_CCW;
+    encoderPos.col = 0;
+    // Get the keycode for the current layer (catches KC_TRNS properly)
+    uint16_t currentKeycode = keymap_key_to_keycode(currentLayer, encoderPos);
+    // Only do MIDI stuff if the encoder isn't assigned on this layer
+    if (currentKeycode == KC_NO || currentKeycode == KC_TRNS) {
+        // Increase or decrease the channel value by stepSize
+        channelVal[currentLayer] += clockwise ? stepSize : -stepSize;
+        // Check for and correct overflow
+        if (channelVal[currentLayer] > 127) {
+            channelVal[currentLayer] = clockwise ? 127 : 0;
         }
-        return false; // Skip all further processing of this key
-    default:
-        return true; // Process all other keycodes normally
+        // Send a MIDI Volume Control Change (CC) message
+        midi_send_cc(&midi_device, currentLayer, MIDI_CC_VOLUME, channelVal[currentLayer]);
+        // Don't process this keycode any further
+        return false;
     }
+    return true;
 }
 
-bool encoder_update_user(uint8_t index, bool clockwise) {
-    if (currentLayer == 0) {
-        tap_code(clockwise ? KC_VOLU : KC_VOLD);
-    }
-    if (clockwise) {
-        channelVal[currentLayer] += stepSize;
-        if (channelVal[currentLayer] > 127) {
-            channelVal[currentLayer] = 127;
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    // Only do stuff when the encoder button is pressed
+    if (record->event.key.row == ENCODER_ROW && record->event.key.col == ENCODER_COL && record->event.pressed) {
+        // Get the keycode for the current layer (catches KC_TRNS properly)
+        uint16_t currentKeycode = keymap_key_to_keycode(currentLayer, record->event.key);
+        if (currentKeycode == KC_NO || currentKeycode == KC_TRNS) {
+            // Send a MIDI Mute Control Change (CC) message
+            midi_send_cc(&midi_device, currentLayer, MIDI_CC_MUTE, 0);
+            // Don't process this keycode any further
+            return false;
         }
-        midi_send_cc(&midi_device, currentLayer, MIDI_CC_VOLUME, channelVal[currentLayer]);
-    } else {
-        channelVal[currentLayer] -= stepSize;
-        if (channelVal[currentLayer] > 127) {
-            channelVal[currentLayer] = 0;
-        }
-        midi_send_cc(&midi_device, currentLayer, MIDI_CC_VOLUME, channelVal[currentLayer]);
     }
     return true;
 }
